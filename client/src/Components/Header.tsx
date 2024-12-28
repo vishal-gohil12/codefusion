@@ -67,9 +67,9 @@ const Header = () => {
           {user.userName ? (
             <a className="border-b-2 border-black rounded">{user.userName}</a>
           ) : (
-            <a href="/login" className="bg-black text-white px-4 py-2 rounded">
+            <Link to="/login" className="bg-black text-white px-4 py-2 rounded">
               Login
-            </a>
+            </Link>
           )}
         </div>
       </div>
