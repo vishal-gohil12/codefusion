@@ -6,6 +6,7 @@ import { TbLockPassword } from "react-icons/tb";
 import { FaRegUser } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../userContext";
+import { BACKEND_URL } from "../backendUrl";
 
 export default function SignUp() {
   const [name, setName] = useState("");
@@ -22,17 +23,14 @@ export default function SignUp() {
         email,
         password,
       };
-      const res = await axios.post(
-        "http://localhost:8080/api/v1/signup",
-        formObj
-      );
+      const res = await axios.post(`${BACKEND_URL}/api/v1/signup`, formObj);
       if (res.status === 201) {
         localStorage.setItem("token", res.data.token);
         user.setUserName(name);
         navigate("/login");
       }
     } catch {
-      alert("Invalid email or password");
+      alert("Invalid email or password or Email is already exist");
     }
   };
 

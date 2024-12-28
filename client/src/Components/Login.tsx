@@ -5,6 +5,7 @@ import { TbLockPassword } from "react-icons/tb";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../userContext";
+import { BACKEND_URL } from "../backendUrl";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -19,10 +20,7 @@ export default function Login() {
         email,
         password,
       };
-      const res = await axios.post(
-        "http://localhost:8080/api/v1/login",
-        formObj
-      );
+      const res = await axios.post(`${BACKEND_URL}/api/v1/login`, formObj);
       if (res.data.status) {
         uesr.setUserName(res.data.userName);
         localStorage.setItem("token", res.data.token);

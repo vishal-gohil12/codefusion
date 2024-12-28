@@ -3,6 +3,7 @@ import { X } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../userContext";
+import { BACKEND_URL } from "../backendUrl";
 
 export default function ProjectModal({
   setShow,
@@ -19,7 +20,7 @@ export default function ProjectModal({
     try {
       const formObj = { projectName, projectLanguage };
       const response = await axios.post(
-        "http://localhost:8080/api/v1/projectCreate",
+        `${BACKEND_URL}/api/v1/projectCreate`,
         formObj,
         {
           headers: {
