@@ -16,6 +16,10 @@ app.use('/api/v1/', userRoute);
 app.use('/api/v1/', projectRoute);
 app.use('/api/v1/', codeRoute);
 
+app.get('/', (req, res) => {
+    res.send("Server is running...")
+})
+
 app.listen(port, ()=> {
     console.log('server is running on ', port);
 });
