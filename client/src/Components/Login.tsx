@@ -3,7 +3,7 @@ import logo from "../assets/image.png";
 import { MdAlternateEmail } from "react-icons/md";
 import { TbLockPassword } from "react-icons/tb";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUser } from "../userContext";
 import { BACKEND_URL } from "../backendUrl";
 
@@ -80,7 +80,7 @@ export default function Login() {
           <div className="flex flex-col items-center gap-4">
             <p>Don't have an account?</p>
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-[17em]">
-              <a href="/signup">Sign Up →</a>
+              <Link to={"/signup"}>Sign Up →</Link>
             </button>
           </div>
         </div>

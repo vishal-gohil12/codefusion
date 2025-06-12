@@ -4,7 +4,7 @@ import logo from "../assets/image.png";
 import { MdAlternateEmail } from "react-icons/md";
 import { TbLockPassword } from "react-icons/tb";
 import { FaRegUser } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useUser } from "../userContext";
 import { BACKEND_URL } from "../backendUrl";
 
@@ -100,7 +100,7 @@ export default function SignUp() {
           <div className="flex flex-col items-center gap-4">
             <p>Already Have an Account?</p>
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-[17em]">
-              <a href="/login">Log In →</a>
+               <Link to={"/login"}>Log In  →</Link>
             </button>
           </div>
         </div>
